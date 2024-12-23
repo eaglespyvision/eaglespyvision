@@ -82,75 +82,6 @@ header nav ul li a:hover {
   #hero h2 {
     font-size: 7vw;  /* Slightly larger text on tablets */
   }
-}
-
-/* For mobile screens (480px and below) */
-@media only screen and (max-width: 480px) {
-  #hero h2 {
-    font-size: 10vw;  /* Increase font size for mobile for better readability */
-  }
-}
-
-
-#products {
-  padding: 20px;
-}
-
-#products h2 {
-  text-align: center;
-}
-
-#product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-#product-list .product-card {
-  width: 30%;
-  margin-bottom: 20px;
-  background-color: #f4f4f4;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-#shop-location {
-  text-align: center;
-  padding: 20px;
-}
-
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-}
-
-/* -------------------- Responsive Styles -------------------- */
-
-/* For larger screens (more than 1200px) */
-@media only screen and (max-width: 1200px) {
-  header .logo-container h1 {
-    font-size: 1.5rem;  /* Adjusts logo size for slightly smaller screens */
-  }
-
-  header nav ul {
-    display: block; /* Changes navigation layout to a block on smaller screens */
-    text-align: center;  /* Centers the navigation */
-  }
-
-  header nav ul li {
-    margin: 10px 0; /* Adds space between the nav items */
-  }
-}
-
-/* For tablets or medium-sized screens (more than 768px) */
-@media only screen and (max-width: 768px) {
-  #hero h2 {
-    font-size: 2rem;  /* Reduces the font size of the hero text on smaller screens */
-  }
 
   #products h2 {
     font-size: 1.8rem;  /* Adjusts font size for product section */
@@ -180,7 +111,7 @@ footer {
   }
 
   #hero h2 {
-    font-size: 1.5rem;  /* Further reduces font size for hero text */
+    font-size: 10vw;  /* Increase font size for mobile for better readability */
   }
 
   #product-list .product-card {
@@ -191,3 +122,20 @@ footer {
     font-size: 0.7rem;  /* Further reduces font size for the footer */
   }
 }
+
+/* -------------------- Larger Screens (1200px and up) -------------------- */
+@media only screen and (max-width: 1200px) {
+  header .logo-container h1 {
+    font-size: 1.5rem;  /* Adjusts logo size for slightly smaller screens */
+  }
+
+  header nav ul {
+    display: block; /* Changes navigation layout to a block on smaller screens */
+    text-align: center;  /* Centers the navigation */
+  }
+
+  header nav ul li {
+    margin: 10px 0; /* Adds space between the nav items */
+  }
+}
+
