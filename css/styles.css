@@ -1,191 +1,141 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('images/camera.gif') center center fixed; /* Set background image to be displayed in the middle */
-    background-size: cover;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: #db1717;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Adjust spacing between the logo and text */
-    flex-grow: 1;
+header .logo-container {
+  display: flex;
+  align-items: center;
 }
 
-.logo-container img {
-    display: block; /* Removes inline spacing */
-    max-width: 100px;
-    height: auto;
+header .logo-container h1 {
+  margin-left: 10px;
 }
 
-.logo-container h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #db1717;
-    text-align: center;
+header nav ul {
+  list-style: none;
+  display: flex;
 }
 
-.navbar-animation {
-    display: none; /* Hide the animation on mobile for simplicity */
+header nav ul li {
+  margin-right: 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-    justify-content: center;
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
 }
 
-nav ul li a {
-    color: #e60d0d;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    font-size: 14px;
+header nav ul li a:hover {
+  text-decoration: underline;
 }
 
-nav ul li a:hover {
-    color: #db1717;
-}
-
+/* Hero Section */
 #hero {
-    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-    color: #e41e1e;
-    text-align: center;
-    padding: 50px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Maximum height for the image */
+  object-fit: cover;  /* Ensures image scales correctly */
 }
 
 #hero h2 {
-    font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 6vw;  /* Use viewport width for scalable text size */
+  padding: 0 10px;  /* Optional: Adds some padding to avoid text overlap */
 }
 
-#hero p {
-    font-size: 1em;
-    margin-bottom: 20px;
+/* Responsive Text Adjustments */
+
+/* For tablets or medium-sized screens (more than 768px) */
+@media only screen and (max-width: 768px) {
+  #hero h2 {
+    font-size: 7vw;  /* Slightly larger text on tablets */
+  }
+
+  #products h2 {
+    font-size: 1.8rem;  /* Adjusts font size for product section */
+  }
+
+  #product-list .product-card {
+    width: 45%;  /* Adjust product cards to take 45% of the width on tablets */
+  }
+
+  #shop-location iframe {
+    height: 300px;  /* Reduces the map iframe height on tablets */
+  }
+
+  footer {
+    font-size: 0.8rem;  /* Adjusts footer font size */
+  }
 }
 
-#hero button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    background-color: #db1717;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
+/* For mobile screens (480px and below) */
+@media only screen and (max-width: 480px) {
+  header .logo-container {
+    text-align: center;  /* Centers logo on very small screens */
+  }
+
+  header .logo-container h1 {
+    font-size: 1.2rem;  /* Reduces logo font size for small screens */
+  }
+
+  #hero h2 {
+    font-size: 10vw;  /* Increase font size for mobile for better readability */
+  }
+
+  #product-list .product-card {
+    width: 90%;  /* Makes product cards take up most of the screen width on mobile */
+  }
+
+  footer {
+    font-size: 0.7rem;  /* Further reduces font size for the footer */
+  }
 }
 
-#hero button:hover {
-    background-color: #e60d0d;
+/* -------------------- Larger Screens (1200px and up) -------------------- */
+@media only screen and (max-width: 1200px) {
+  header .logo-container h1 {
+    font-size: 1.5rem;  /* Adjusts logo size for slightly smaller screens */
+  }
+
+  header nav ul {
+    display: block; /* Changes navigation layout to a block on smaller screens */
+    text-align: center;  /* Centers the navigation */
+  }
+
+  header nav ul li {
+    margin: 10px 0; /* Adds space between the nav items */
+  }
 }
 
-#products {
-    padding: 20px;
-}
-
-#product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.product-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    width: calc(100% - 40px);
-    max-width: 300px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.product-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        text-align: center;
-    }
-
-    .logo-container {
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    #hero {
-        padding: 30px 15px;
-    }
-
-    #hero h2 {
-        font-size: 1.5em;
-    }
-
-    #hero p {
-        font-size: 0.9em;
-    }
-
-    #hero button {
-        font-size: 0.9em;
-        padding: 8px 16px;
-    }
-
-    .product-card {
-        width: calc(100% - 30px);
-        max-width: 250px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    #hero h2 {
-        font-size: 1.2em;
-    }
-
-    #hero p {
-        font-size: 0.8em;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-}
