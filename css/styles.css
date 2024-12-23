@@ -1,10 +1,3 @@
-/* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
@@ -14,12 +7,12 @@ body {
   background-size: cover;
 }
 
-h1, h2, h3 {
-  font-weight: 700;
-}
-
 html {
   scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
 }
 
 /* Header Styles */
@@ -117,73 +110,10 @@ nav ul li a:hover {
 
 /* Hero Section */
 #hero {
-  position: relative;
+  background: url('https://drive.google.com/file/d/1_zBErxHL5gFtOhiqid3ZR-hpRNj8beRb/view?usp=sharing') no-repeat center center/cover;
+  color: #e41e1e;
   text-align: center;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 400px; /* Maximum height for the image */
-  object-fit: cover;  /* Ensures image scales correctly */
-}
-
-#hero h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 6vw;  /* Use viewport width for scalable text size */
-  padding: 0 10px;  /* Optional: Adds some padding to avoid text overlap */
-}
-
-/* Responsive Text Adjustments */
-
-/* For tablets or medium-sized screens (more than 768px) */
-@media only screen and (max-width: 768px) {
-  #hero h2 {
-    font-size: 7vw;  /* Slightly larger text on tablets */
-  }
-
-  #products h2 {
-    font-size: 1.8rem;  /* Adjusts font size for product section */
-  }
-
-  #product-list .product-card {
-    width: 45%;  /* Adjust product cards to take 45% of the width on tablets */
-  }
-
-  #shop-location iframe {
-    height: 300px;  /* Reduces the map iframe height on tablets */
-  }
-
-  footer {
-    font-size: 0.8rem;  /* Adjusts footer font size */
-  }
-}
-
-/* For mobile screens (480px and below) */
-@media only screen and (max-width: 480px) {
-  header .logo-container {
-    text-align: center;  /* Centers logo on very small screens */
-  }
-
-  header .logo-container h1 {
-    font-size: 1.2rem;  /* Reduces logo font size for small screens */
-  }
-
-  #hero h2 {
-    font-size: 10vw;  /* Increase font size for mobile for better readability */
-  }
-
-  #product-list .product-card {
-    width: 90%;  /* Makes product cards take up most of the screen width on mobile */
-  }
-
-  footer {
-    font-size: 0.7rem;  /* Further reduces font size for the footer */
-  }
+  padding: 100px 20px;
 }
 
 /* Product Section */
@@ -213,6 +143,15 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
 /* Footer Section */
 footer {
   background: #333;
@@ -220,4 +159,96 @@ footer {
   text-align: center;
   padding: 10px;
   font-size: 14px;
+}
+
+/* -------------------- Responsive Styles -------------------- */
+
+/* For larger screens (more than 1200px) */
+@media only screen and (max-width: 1200px) {
+  header {
+    padding: 15px 30px;
+  }
+
+  .logo-container h1 {
+    font-size: 20px;
+  }
+
+  nav ul {
+    gap: 30px;
+  }
+
+  .product-card {
+    width: 300px; /* Adjusts the width of product cards for larger screens */
+  }
+
+  footer {
+    font-size: 16px;
+  }
+}
+
+/* For tablets or medium-sized screens (768px and below) */
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  .logo-container h1 {
+    font-size: 18px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  #hero {
+    padding: 80px 20px; /* Adjust padding for smaller screen sizes */
+  }
+
+  #product-list {
+    justify-content: space-between;
+  }
+
+  .product-card {
+    width: 45%; /* Adjust product card width for tablets */
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+
+/* For mobile screens (480px and below) */
+@media only screen and (max-width: 480px) {
+  header {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-container h1 {
+    font-size: 16px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #hero {
+    padding: 60px 20px; /* Adjust padding for small screens */
+  }
+
+  #product-list {
+    justify-content: center;
+  }
+
+  .product-card {
+    width: 90%; /* Adjust product card width for mobile */
+    padding: 25px; /* Reduced padding for mobile */
+  }
+
+  footer {
+    font-size: 12px;
+  }
 }
