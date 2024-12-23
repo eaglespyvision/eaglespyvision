@@ -98,11 +98,50 @@ body {
   }
   
   #hero {
-    background: url('https://drive.google.com/file/d/1_zBErxHL5gFtOhiqid3ZR-hpRNj8beRb/view?usp=sharing') no-repeat center center/cover;
-    color: #e41e1e;
-    text-align: center;
-    padding: 100px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Maximum height for the image */
+  object-fit: cover;  /* Ensures image scales correctly */
+}
+
+#hero h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 6vw;  /* Use viewport width for scalable text size */
+  padding: 0 10px;  /* Optional: Adds some padding to avoid text overlap */
+}
+
+/* Responsive Text Adjustments */
+
+/* For tablets or medium-sized screens (more than 768px) */
+@media only screen and (max-width: 768px) {
+  #hero h2 {
+    font-size: 7vw;  /* Slightly larger text on tablets */
   }
+}
+
+/* For mobile screens (480px and below) */
+@media only screen and (max-width: 480px) {
+  #hero h2 {
+    font-size: 10vw;  /* Increase font size for mobile for better readability */
+  }
+}
+
+
+
+
+
+
+
+
   
   #products {
     padding: 20px;
