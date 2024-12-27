@@ -105,6 +105,13 @@ nav ul li a:hover {
   color: #e41e1e;
 }
 
+#hero img {
+  width: 100%;
+  height: auto;
+  display: block; /* Removes any unwanted inline spacing below the image */
+  margin: 0 auto; /* Center the image if necessary */
+}
+
 /* Products Section */
 #products {
   padding: 20px;
